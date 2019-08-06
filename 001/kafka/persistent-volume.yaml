@@ -1,0 +1,51 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: k8s-pv-kafka1
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "anything"
+  labels:
+    type: kafka
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/data/k8s/mock-esb/.workspace/data/kafka/01"
+  persistentVolumeReclaimPolicy: Recycle
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: k8s-pv-kafka2
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "anything"
+  labels:
+    type: kafka
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/data/k8s/mock-esb/.workspace/data/kafka/02"
+  persistentVolumeReclaimPolicy: Recycle
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: k8s-pv-kafka3
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "anything"
+  labels:
+    type: kafka
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/data/k8s/mock-esb/.workspace/data/kafka/03"
+  persistentVolumeReclaimPolicy: Recycle
+
